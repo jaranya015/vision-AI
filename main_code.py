@@ -1,5 +1,6 @@
 import cv2
 import time
+import os
 from datetime import datetime
 
 # โหลดโมเดล SSD + MobileNet สำหรับ Face Detection
@@ -7,8 +8,8 @@ from datetime import datetime
 # modelFile = r"C:\Users\TUF\Downloads\computer vision\Real Time Face Detection and Counting\res10_300x300_ssd_iter_140000.caffemodel"
 # configFile = r"C:\Users\TUF\Downloads\computer vision\Real Time Face Detection and Counting\deploy.prototxt"
 
-modelFile = "/Users/faiijaran/vision_AI/vision-AI/res10_300x300_ssd_iter_140000.caffemodel"
-configFile = "/Users/faiijaran/vision_AI/vision-AI/deploy.prototxt"
+modelFile = os.path.abspath("res10_300x300_ssd_iter_140000.caffemodel")
+configFile = os.path.abspath("deploy.prototxt")
 
 net = cv2.dnn.readNetFromCaffe(configFile, modelFile)
 
